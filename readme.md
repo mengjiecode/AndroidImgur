@@ -14,3 +14,4 @@ Use Imgur API to allow user to view most viral images of the day/week/month, sor
 
 ## Screen shot
 ![alt text](https://github.com/mengjiecode/AndroidImgur/blob/master/Screenshot_1.png "Screen shot 1")
+![alt text](https://github.com/mengjiecode/AndroidImgur/blob/master/Screenshot_2.png "Screen shot 2")
