@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/one"
+        android:title="Day"
+        android:icon="@drawable/ic_day"
+        android:orderInCategory="1"/>
+    <item
+        android:id="@+id/two"
+        android:title="Week"
+        android:icon="@drawable/ic_week"
+        android:orderInCategory="2"/>
+    <item
+        android:id="@+id/three"
+        android:title="Month"
+        android:icon="@drawable/ic_month"
+        android:orderInCategory="3"/>
+
+    <item
+        android:id="@+id/four"
+        android:title="Newest"
+        android:icon="@drawable/ic_latest"
+        android:orderInCategory="4"/>
+
+    <item
+        android:id="@+id/five"
+        android:title="Popular"
+        android:icon="@drawable/ic_popular"
+        android:orderInCategory="5"/>
+</menu>
