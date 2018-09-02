@@ -11,3 +11,6 @@ Use Imgur API to allow user to view most viral images of the day/week/month, sor
 
 ## Language
 - Java
+
+## Screen shot
+![alt text](https://github.com/mengjiecode/AndroidImgur/blob/master/Screenshot_1.png "Screen shot 1")
