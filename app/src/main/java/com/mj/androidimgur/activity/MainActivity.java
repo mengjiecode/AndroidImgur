@@ -2,7 +2,6 @@ package com.mj.androidimgur.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,12 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mj.androidimgur.R;
 import com.mj.androidimgur.adapter.GalleryItemsAdapter;
 import com.mj.androidimgur.domain.SimpleGalleryItem;
-import com.mj.androidimgur.model.GalleryItem;
 import com.mj.androidimgur.model.GalleryResponse;
 import com.mj.androidimgur.model.Image;
 import com.mj.androidimgur.rest.ApiClient;
@@ -113,15 +110,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFloatingButton() {
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show());
 
         final FabSpeedDial fab = findViewById(R.id.fab);
         fab.addOnMenuItemClickListener(new FabSpeedDial.OnMenuItemClickListener() {
             @Override
             public void onMenuItemClick(FloatingActionButton fab, TextView label, int itemId) {
-                Toast.makeText(MainActivity.this, "Click: " + itemId + "label: " + label.getText().toString(), Toast.LENGTH_SHORT).show();
                 String text = label.getText().toString().toLowerCase();
                 if (text.equalsIgnoreCase("newest")) {
                     section = "top";
@@ -146,14 +139,6 @@ public class MainActivity extends AppCompatActivity {
         // set a StaggeredGridLayoutManager with 2 number of columns and vertical orientation
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
-
-
-        // adding inbuilt divider line
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-
-        // adding custom divider line with padding 16dp
-        // recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 16));
-//        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         recyclerView.setAdapter(adapter);
 
@@ -198,9 +183,6 @@ public class MainActivity extends AppCompatActivity {
                 .doOnSubscribe(s -> progressBar.setVisibility(View.VISIBLE))
                 .doOnSuccess(s -> progressBar.setVisibility(View.GONE))
                 .subscribe(imageItems -> {
-                    Log.d(TAG, "lol tommy: " + imageItems.size());
-//                    adapter = new GalleryItemsAdapter(imageItems, MainActivity.this.getApplicationContext());
-//                    recyclerView.setAdapter(adapter);
                     // notify adapter about data set changes
                     // so that it will render the list with new data
                     adapter.setItemList(imageItems);
